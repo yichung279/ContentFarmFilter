@@ -1,16 +1,17 @@
 ;(async () => {
-  const src = chrome.extension.getURL('script/config.js')
-  const config = await import(src)
-  const fakeSites = config.fakeSites
+  const src = chrome.extension.getURL('data/blockList.json')
+  const response = await fetch(src)
+  const json = await response.json()
+  const contentFarms = json.contentFarms
 
-  let hasFakeSites = (site) => {
+  let isContentFarm = (site) => {
     link = site.querySelector('a')
-    return fakeSites.some((fakeSite) => link.href.includes(fakeSite))
+    return contentFarms.some((contentFarm) => link.href.includes(contentFarm))
   }
 
   const sites = document.getElementsByClassName('g')
   for (let site of sites) {
-    if (hasFakeSites(site)) {
+    if (isContentFarm(site)) {
       site.innerHTML = ''
     }
   }

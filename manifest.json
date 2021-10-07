@@ -11,6 +11,6 @@
 
   "permissions": ["webRequest", "https://*.google.com/*", "http://*.google.com/*"],
   "web_accessible_resources": [
-      "script/config.js"
+      "data/blockList.json"
     ]
 }
