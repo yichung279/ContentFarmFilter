@@ -3,20 +3,15 @@
   const config = await import(src)
   const fakeSites = config.fakeSites
 
-  function blockFakeSites(fakeSites) {
-    const gs = document.getElementsByClassName('g')
-
-    function hasFakeSites(element) {
-      return fakeSites.some((fakeSite) => element.innerHTML.includes(fakeSite))
-    }
-
-    for (let g of gs) {
-      console.log(g)
-      if (hasFakeSites(g)) {
-        g.innerHTML = ''
-      }
-    }
+  let hasFakeSites = (site) => {
+    link = site.querySelector('a')
+    return fakeSites.some((fakeSite) => link.href.includes(fakeSite))
   }
 
-  blockFakeSites(fakeSites)
+  const sites = document.getElementsByClassName('g')
+  for (let site of sites) {
+    if (hasFakeSites(site)) {
+      site.innerHTML = ''
+    }
+  }
 })()
