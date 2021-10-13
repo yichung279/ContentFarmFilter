@@ -2,15 +2,15 @@
   "name": "內容農場過濾器",
   "version": "1.0.0",
   "description": "在 google search 中封鎖內容農場",
-  "manifest_version": 2,
+  "manifest_version": 3,
 
   "content_scripts": [{
     "matches": ["https://*.google.com/*"],
     "js": ["script/watch.js"]
   }],
 
-  "permissions": ["webRequest", "https://*.google.com/*", "http://*.google.com/*"],
-  "web_accessible_resources": [
-      "data/blockList.json"
-    ]
+  "web_accessible_resources": [{
+      "resources": [ "data/blockList.json" ],
+      "matches": ["https://*.google.com/*"]
+    }]
 }

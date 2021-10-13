@@ -1,4 +1,4 @@
-# Contetn Farm Filter
+# Content Farm Filter
 
 The Chrome Extension filter out content farm from your google search.
 

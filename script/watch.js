@@ -1,5 +1,5 @@
 ;(async () => {
-  const src = chrome.extension.getURL('data/blockList.json')
+  const src = chrome.runtime.getURL('data/blockList.json')
   const response = await fetch(src)
   const json = await response.json()
   const contentFarms = json.contentFarms
