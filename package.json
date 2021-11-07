@@ -2,7 +2,6 @@
   "name": "contentfarmfilter",
   "private": true,
   "dependencies": {
-    "@craco/craco": "^5.8.0",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
@@ -12,10 +11,9 @@
     "web-vitals": "^0.2.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "INLINE_RUNTIME_CHUNK=false craco build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "eslintConfig": {
     "extends": [
@@ -37,6 +35,9 @@
   },
   "devDependencies": {
     "@types/chrome": "^0.0.126",
-    "@types/react-router-dom": "^5.1.6"
+    "@types/react-router-dom": "^5.1.6",
+    "@vitejs/plugin-react": "^1.0.7",
+    "react-router-dom": "^6.0.1",
+    "vite": "^2.6.13"
   }
 }
